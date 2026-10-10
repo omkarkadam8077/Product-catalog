@@ -1,0 +1,100 @@
+﻿
+@model ProductCatalog.Models.Product
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Add Product</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            margin: 40px;
+        }
+
+        .form-box {
+            width: 450px;
+            margin: auto;
+            padding: 30px;
+            background-color: white;
+            border: 1px solid #ccc;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type=text],
+        input[type=number],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        .submit {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .back {
+            margin-left: 10px;
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-box">
+
+        <h1>Add Product</h1>
+
+        @using (Html.BeginForm())
+        {
+            <label>Product Name</label>
+            @Html.TextBoxFor(model => model.ProductName)
+
+            <label>Category</label>
+            @Html.TextBoxFor(model => model.Category)
+
+            <label>Price</label>
+            @Html.TextBoxFor(model => model.Price)
+
+            <label>Description</label>
+            @Html.TextAreaFor(model => model.Description)
+
+            <input type="submit"
+                   value="Add Product"
+                   class="submit" />
+
+            <a href="@Url.Action("Index", "Product")"
+               class="back">
+                Cancel
+            </a>
+        }
+
+    </div>
+
+</body>
+</html>
+

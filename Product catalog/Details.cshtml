@@ -1,0 +1,78 @@
+﻿
+@model ProductCatalog.Models.Product
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Product Details</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            margin: 40px;
+        }
+
+        .product-box {
+            width: 500px;
+            margin: auto;
+            padding: 30px;
+            background-color: white;
+            border: 1px solid #ccc;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="product-box">
+
+        <h1>@Model.ProductName</h1>
+
+        <p>
+            <strong>Product ID:</strong>
+            @Model.ProductId
+        </p>
+
+        <p>
+            <strong>Category:</strong>
+            @Model.Category
+        </p>
+
+        <p>
+            <strong>Price:</strong>
+            ₹ @Model.Price
+        </p>
+
+        <p>
+            <strong>Description:</strong>
+            @Model.Description
+        </p>
+
+        <a class="back"
+           href="@Url.Action("Index", "Product")">
+            ← Back to Product Catalog
+        </a>
+
+    </div>
+
+</body>
+</html>
+
